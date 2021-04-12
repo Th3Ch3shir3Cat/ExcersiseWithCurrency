@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+<h2>Топ 5 валют по изменению на сегодня</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name valute</th>
+            <th>Char code</th>
+            <th>Name</th>
+            <th>Values</th>
+            <th>Difference</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="valute : ${valutes}">
+            <td th:text="${valute.getName()}"></td>
+            <td th:text="${valute.getInfo().getCharCode()}"></td>
+            <td th:text="${valute.getInfo().getName()}"></td>
+            <td th:text="${valute.getInfo().getValue()}"></td>
+            <td>[[${valute.getInfo().getValue()} - ${valute.getInfo().getPrevious()}]]</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
